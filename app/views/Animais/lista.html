@@ -1,0 +1,33 @@
+#{extends 'main.html' /}
+#{set title:'Listagem de Animais' /}
+
+
+
+<div class="container">
+	<br>
+	<h1>Listagem de Animais</h1>
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Nome: </th>
+			<th>peso:</th>
+			<th>Data de Nascimento:</th>
+			<th>Tipo animal</th>
+		</tr>
+	</thead>
+	<tbody>
+		#{list items:animais, as:'a'}
+		<tr>
+			<td style="width: 100px;">${a.nome}</td>
+			<td>${a.peso}</td>
+			<td>${a.dataNascimento}</td>
+			<td>${a.tipoAnimal}</td>
+			<td>
+				<a href="#" class="btn btn-danger btn-sm">Remover</a><br>
+				<a href="#" class="btn btn-danger btn-sm" style="background-color: orange; margin-top: 5px;">Editar</a>
+			</td>
+		</tr>
+		#{/list}
+	</tbody>
+</table>
+</div>
